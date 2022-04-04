@@ -3,6 +3,8 @@
 > This is the exercise 01 with multiple options.
 >
 > Option A: Write a program to convert a natural number to its Roman number equivalent.
+>
+> Option B: Write a program that expects an integer as input and outputs the integer in word form.
 
 ## Author
 

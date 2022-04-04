@@ -6,6 +6,10 @@
 >
 > Option B: Write a program that expects an integer as input and outputs the integer in word form.
 
+## Testing
+
+- To test just use the command `rspec` inside the directory
+
 ## Author
 
 👤 **Tiago Rahal Aires**

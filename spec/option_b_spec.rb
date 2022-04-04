@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative '../option_b/option_b'
 
 describe Option_B do

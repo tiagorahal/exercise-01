@@ -88,7 +88,6 @@ class Option_B
       n2 = len.to_s[1]
       n3 = len.to_s[2]
       n4 = len.to_s[3]
-      # the last two digits: between 10 and 19
       if (n3.to_i == 1) && n4.to_i.positive?
         digits_number = "#{single_digit[n1.to_i]} #{tens_power[1]} #{single_digit[n2.to_i]} #{tens_power[0]} and #{double_digit[n4.to_i + 1]}"
         return digit_number

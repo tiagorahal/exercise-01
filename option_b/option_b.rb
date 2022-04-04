@@ -1,4 +1,4 @@
-def number_to_words(num=0)
+def number_to_words(num)
   
   len = num
 
@@ -54,6 +54,13 @@ def number_to_words(num=0)
 
   if len.to_s.size === 1    
     puts single_digit[num]
+  end
+
+  if len.to_s.size === 2
+    n1 = len.to_s[0]
+    n2 = len.to_s[1]
+    double_digit_number = double_digit[n1] + single_digit[n2]
+    puts double_digit_number
   end
     
 end

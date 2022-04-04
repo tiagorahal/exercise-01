@@ -1,4 +1,4 @@
-def number_to_words(num)
+def number_to_words(num=nil)
   
   len = num
 
@@ -62,7 +62,7 @@ def number_to_words(num)
     if n1.to_i === 1
       puts double_digit[n2.to_i + 1]
     elsif n1.to_i > 1 and n2.to_i > 0
-      double_digit_number = tens_multiple[n1.to_i] + single_digit[n2.to_i]
+      double_digit_number = tens_multiple[n1.to_i] + " " + single_digit[n2.to_i]
       puts double_digit_number
     elsif n1.to_i > 1 and n2.to_i === 0
       double_digit_number = tens_multiple[n1.to_i]
@@ -86,7 +86,31 @@ def number_to_words(num)
       puts three_digit_number
     end
   end
+
+  if len.to_s.size === 4
+    n1 = len.to_s[0]
+    n2 = len.to_s[1]
+    n3 = len.to_s[2]
+    n4 = len.to_s[3]
+    # the last two digits: between 10 and 19
+    if n3.to_i === 1 and n4.to_i > 0
+      four_digits = single_digit[n1.to_i] + " " + tens_power[1] + " " + single_digit[n2.to_i] + " " + tens_power[0] + " and " + double_digit[n4.to_i + 1]
+      puts four_digits
+    elsif n3.to_i > 1 and n4.to_i > 0
+      four_digit_number = single_digit[n1.to_i] + " " + tens_power[1] + " " + single_digit[n2.to_i] + " " + tens_power[0] + " and " + tens_multiple[n3.to_i] + " " + single_digit[n4.to_i]
+      puts four_digit_number
+    elsif n3.to_i > 1 and n4.to_i === 0
+      four_digit_number = single_digit[n1.to_i] + " " + tens_power[1] + " " + single_digit[n2.to_i] + " " + tens_power[0] + " and " + tens_multiple[n3.to_i]
+      puts four_digit_number
+    elsif n3.to_i === 0 and n4.to_i === 0
+      four_digit_number = single_digit[n1.to_i] + " " + tens_power[1] + " and " + single_digit[n2.to_i] + " " + tens_power[0]
+      puts four_digit_number
+    elsif n3.to_i === 1 and n4.to_i === 0
+      four_digit_number = single_digit[n1.to_i] + " " + tens_power[1] + " " + single_digit[n2.to_i] + " " + tens_power[0] + " and " + double_digit[n4.to_i + 1]
+      puts four_digit_number
+    end
+  end
     
 end
 
-number_to_words(5)
+number_to_words(232)

@@ -59,8 +59,15 @@ def number_to_words(num)
   if len.to_s.size === 2
     n1 = len.to_s[0]
     n2 = len.to_s[1]
-    double_digit_number = double_digit[n1] + single_digit[n2]
-    puts double_digit_number
+    if n1.to_i === 1
+      puts double_digit[n2.to_i + 1]
+    elsif n1.to_i > 1 and n2.to_i > 0
+      double_digit_number = tens_multiple[n1.to_i] + single_digit[n2.to_i]
+      puts double_digit_number
+    elsif n1.to_i > 1 and n2.to_i === 0
+      double_digit_number = tens_multiple[n1.to_i]
+      puts double_digit_number
+    end
   end
     
 end
